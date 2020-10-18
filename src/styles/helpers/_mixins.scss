@@ -1,0 +1,22 @@
+// color
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+}
+
+// end color
+@mixin proximaBold {
+  font-family: "Proxima Nova Bold", sans-serif;
+}
+@mixin fontTntro {
+  font-family: "Intro", sans-serif;
+}
+
+@mixin df_jc-sb {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin df_center {
+  display: flex;
+  align-items: center;
+}

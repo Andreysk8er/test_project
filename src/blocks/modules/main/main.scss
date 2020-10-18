@@ -1,0 +1,431 @@
+.hidden {
+  overflow: hidden;
+}
+.main {
+  &__menu-wrap {
+    position: relative;
+    z-index: 101;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  &__menu {
+    @include df_jc-sb;
+    align-items: center;
+    max-width: 965px;
+    height: 100%;
+    margin: 0 auto;
+
+    justify-content: space-between;
+  }
+  &__menu-item {
+    color: var(--color-white);
+    font-size: 14px;
+    text-transform: uppercase;
+    position: relative;
+    &::after {
+      content: "";
+      right: -64px;
+      background-color: rgb(204, 204, 204);
+      position: absolute;
+      width: 1px;
+      height: 16px;
+    }
+  }
+  &__menu-non::after {
+    display: none;
+  }
+  &__menu-active {
+    @include proximaBold;
+  }
+  &__advantages-wrap {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    z-index: 101;
+    height: 100%;
+    width: 100%;
+  }
+  &__advantages {
+    position: relative;
+    z-index: 101;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+  }
+}
+.advantages {
+  max-width: 1170px;
+  padding: 0 15px;
+  display: flex;
+  height: 100%;
+  margin: 0 auto;
+  &-item {
+    margin-top: 20px;
+    width: 270px;
+  }
+  &-item__img {
+    margin-bottom: 23px;
+  }
+  &-item__title {
+    font-size: 22px;
+    @include proximaBold;
+    margin-bottom: 18px;
+  }
+  &-item__text {
+    max-width: 260px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  padding: 70px 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  transition: left 0s 0.75s;
+  &__content {
+    position: relative;
+    z-index: 101;
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: start;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -20px;
+      background-color: var(--color-white);
+      width: 4px;
+      height: 183px;
+      transform: skew(-15deg);
+    }
+  }
+  &__title,
+  &__room,
+  &__area {
+    width: 583px;
+    height: 110px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: skew(-15deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  &__title-text {
+    transform: skew(15deg);
+    font-size: 85px;
+    font-weight: 900;
+    @include fontTntro;
+    color: var(--color-black);
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    display: flex;
+    align-items: center;
+    margin-left: -27px;
+  }
+  &__room {
+    width: 280px;
+    height: 63px;
+    margin-right: 10px;
+  }
+  &__area {
+    background-image: linear-gradient(
+      0deg,
+      rgb(42, 235, 42) 0%,
+      rgb(0, 117, 0) 100%
+    );
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    width: 177px;
+    height: 50px;
+  }
+  &__description {
+    font-size: 19px;
+    @include proximaBold;
+    color: var(--color-white);
+    text-transform: uppercase;
+    width: 250px;
+    margin: 16px 0 21px;
+  }
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    letter-spacing: 2.3px;
+    color: var(--color-white);
+    @include proximaBold;
+    text-transform: uppercase;
+    border: 2px solid var(--color-white);
+    border-radius: 2px;
+    background-image: linear-gradient(
+      90deg,
+      rgb(255, 79, 88) 0%,
+      rgb(253, 112, 72) 100%
+    );
+    width: 230px;
+    height: 50px;
+    cursor: pointer;
+  }
+  &__room-text {
+    transform: skew(15deg);
+    font-size: 36px;
+    @include fontTntro;
+    font-weight: 800;
+    font-style: italic;
+  }
+  &__room-text::after {
+    content: "";
+    width: 226px;
+    height: 3px;
+    background-color: var(--color-white);
+    position: absolute;
+    bottom: 0;
+    left: -45px;
+  }
+  &__area-text {
+    text-align: justify;
+    transform: skew(15deg);
+    font-size: 20.1px;
+    font-family: "Intro", sans-serif;
+    color: var(--color-white);
+    span {
+      font-size: 46px;
+    }
+  }
+  &-1 {
+    background-image: url("../../../img/slider/slide_1.png");
+  }
+  &-2 {
+    background-image: url("../../../img/slider/slide_2.png");
+  }
+  &-3 {
+    background-image: url("../../../img/slider/slide_3.png");
+  }
+  &-4 {
+    background-image: url("../../../img/slider/slide_4.png");
+  }
+  &-5 {
+    background-image: url("../../../img/slider/slide_5.png");
+  }
+  &-6 {
+    background-image: url("../../../img/slider/slide_6.png");
+  }
+  &-1::after,
+  &-2::after,
+  &-3::after,
+  &-4::after,
+  &-5::after,
+  &-6::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: 100%;
+    width: 450px;
+    border-bottom: 100vh solid rgba(0, 0, 0, 0.4);
+    border-left: 300px solid transparent;
+    transform: rotate(180deg);
+  }
+}
+
+.slider-container {
+  height: calc(100vh - 56px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.menu__wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  background-color: var(--color-white);
+}
+
+.menu {
+  @include df_jc-sb;
+  align-items: center;
+  height: 200px;
+  width: 250px;
+  position: absolute;
+  left: -10px;
+  z-index: 110;
+  top: 322px;
+  &__btns {
+    background: transparent;
+    border: transparent;
+    outline: transparent;
+    cursor: pointer;
+  }
+  & label {
+    cursor: pointer;
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    // background: var(--color-white);
+    border-radius: 50px;
+    position: relative;
+    &:hover {
+      background: var(--color-white);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 15px;
+      height: 15px;
+      border: 2px solid var(--color-white);
+      border-radius: 50%;
+    }
+  }
+}
+.dot-active {
+  background-color: var(--color-white);
+}
+
+[id^="slide"]:checked + .slide {
+  left: 0;
+  z-index: 100;
+  transition: left 0.65s ease-out;
+}
+.slider__wraper {
+  height: calc(100vh - 390px);
+}
+
+@media (max-width: 768px) {
+  .main {
+    &__menu {
+      max-width: 600px;
+    }
+    &__menu-item::after {
+      right: -40px;
+    }
+  }
+  .slide {
+    &__content {
+      max-width: 600px;
+    }
+    &__title,
+    &__room,
+    &__area {
+      width: 400px;
+    }
+    &__title-text {
+      font-size: 46px;
+    }
+    &-1::after,
+    &-2::after,
+    &-3::after,
+    &-4::after,
+    &-5::after,
+    &-6::after {
+      display: none;
+    }
+  }
+  .menu {
+    left: 75px;
+  }
+  .advantages {
+    &-item__img {
+      width: 70px;
+    }
+    &-item__title {
+      font-size: 18px;
+    }
+    &-item__text {
+      font-size: 15px;
+    }
+  }
+}
+@media (max-width: 414px) {
+  .slider-container {
+    height: 100%;
+  }
+  .slider__wraper {
+    height: 100vh;
+  }
+  .slide {
+    padding: 0;
+    height: calc(100vh - 56px);
+    &__content {
+      max-width: 325px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 80%;
+    }
+    &__title-text {
+      font-size: 24px;
+    }
+    &__title,
+    &__room,
+    &__area {
+      width: 180px;
+      height: 60px;
+      font-size: 28px;
+    }
+    &__content::after {
+      height: 130px;
+      top: 137px;
+    }
+    &__room {
+      margin-left: 10px;
+    }
+    &__area {
+      height: 50px;
+    }
+    &__room-text::after {
+      width: 135px;
+      bottom: -5px;
+      left: -30px;
+    }
+    &__room-text {
+      font-size: 24px;
+    }
+    &__area-text span {
+      font-size: 24px;
+    }
+  }
+  .advantages {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu {
+    left: 0;
+    right: 0;
+    width: 80vw;
+    margin: 0 auto;
+    top: 60vh;
+  }
+}
+
+@media (max-width: 375px) {
+  .slide {
+    &__title,
+    &__room,
+    &__area {
+      margin-left: 20px;
+    }
+    &__subtitle {
+      margin-left: -18px;
+    }
+    &__room-text::after {
+      left: -20px;
+    }
+    &__content::after {
+      left: 0;
+      top: 107px;
+    }
+  }
+}
